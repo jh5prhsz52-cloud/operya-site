@@ -1,0 +1,141 @@
+@import 'tailwindcss';
+
+/* ------------------------------------------------------------------
+   Design tokens — Operya
+   Valeurs issues du handoff "Refonte operya.cloud" (hi-fi, finales).
+   Ne pas inventer de nouvelles couleurs : composer avec celles-ci.
+   ------------------------------------------------------------------ */
+@theme {
+  --color-background: hsl(220 25% 8%);
+  --color-foreground: hsl(210 20% 92%);
+  --color-card: hsl(220 20% 12%);
+  --color-elevated: hsl(220 20% 14%);
+  --color-muted: hsl(220 15% 18%);
+
+  /* Texte secondaire. Le handoff fixe 215 15% 60% comme *minimum* ;
+     la maquette hi-fi utilise ces deux valeurs plus claires, qui passent
+     AA largement sur le fond 220 25% 8%. */
+  --color-muted-foreground: hsl(215 15% 68%); /* labels mono ≤ 13px */
+  --color-body: hsl(215 15% 74%); /* corps de texte 14-20px */
+
+  --color-border: hsl(220 15% 20%);
+  --color-primary: hsl(165 60% 45%);
+  --color-secondary: hsl(215 75% 55%);
+  --color-accent: hsl(190 50% 50%);
+
+  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+  --font-mono: 'IBM Plex Mono', ui-monospace, SFMono-Regular, monospace;
+
+  --radius-token: 0.75rem; /* 12px */
+
+  /* Le handoff fixe une seule rupture : « sous 900px, tout passe en une
+     colonne ». On l'expose comme variante Tailwind `wide:`. */
+  --breakpoint-wide: 900px;
+}
+
+@layer base {
+  * {
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    margin: 0;
+    background: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* Anneau de focus visible et cohérent partout — la maquette n'en
+     prévoyait pas, mais le site doit rester utilisable au clavier. */
+  :focus-visible {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 3px;
+    border-radius: 4px;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+}
+
+@layer components {
+  /* Conteneur : max 1080px, 32px de gouttière (20px sous 900px). */
+  .shell {
+    max-width: 1080px;
+    margin-inline: auto;
+    padding-inline: 32px;
+  }
+
+  /* Eyebrow mono de section : 11px, tracking .14em. */
+  .eyebrow {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.14em;
+    color: var(--color-muted-foreground);
+  }
+
+  .gradient-text {
+    background: linear-gradient(135deg, hsl(165 55% 50%), var(--color-secondary));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  .gradient-bg {
+    background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+  }
+
+  .glow {
+    box-shadow:
+      0 0 30px hsl(165 60% 45% / 0.25),
+      0 0 60px hsl(215 75% 55% / 0.15);
+  }
+
+  /* Grille technique 64px du hero. */
+  .grid-backdrop {
+    background-image:
+      linear-gradient(hsl(210 20% 92% / 0.045) 1px, transparent 1px),
+      linear-gradient(90deg, hsl(210 20% 92% / 0.045) 1px, transparent 1px);
+    background-size: 64px 64px;
+  }
+
+  .field {
+    padding: 0 16px;
+    border: 1px solid var(--color-border);
+    border-radius: 10px;
+    background: var(--color-card);
+    color: var(--color-foreground);
+    font: 400 15px/1.6 var(--font-sans);
+    outline: none;
+    transition: border-color 0.15s ease;
+  }
+
+  .field::placeholder {
+    color: var(--color-muted-foreground);
+  }
+
+  .field:focus {
+    border-color: var(--color-primary);
+  }
+}
+
+@media (max-width: 900px) {
+  .shell {
+    padding-inline: 20px;
+  }
+}
