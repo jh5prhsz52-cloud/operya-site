@@ -65,13 +65,33 @@ moment-là — le domaine sert aujourd'hui la version Lovable.
 2. Dans le dépôt : *Settings → Pages → Custom domain* → `operya.cloud`, puis
    cocher *Enforce HTTPS* une fois le certificat émis.
 
-## ⚠️ Contenus à remplacer avant mise en ligne définitive
+## Positionnement commercial
 
-Repris tels quels du prototype, ce sont des **exemples de démonstration** :
+Operya démarre et n'a pas encore de référence client publiable. Le site
+n'affiche donc **aucun chiffre de résultat ni témoignage** : les fausses preuves
+du prototype ont toutes été supprimées. La réassurance repose sur quatre
+engagements vérifiables (`GUARANTEES` dans `src/data/static.ts`) et sur la
+transparence du flux installé.
 
-- tous les chiffres clés (`−9 h`, `×3`, `+18 %`, `1 min`…) dans `src/data/topics.ts` ;
-- toutes les citations et les profils clients qui les accompagnent ;
-- la photo client, remplacée pour l'instant par un disque neutre (`Proof.tsx`) ;
-- les logos des outils connectés, aujourd'hui de simples libellés (`static.ts`) ;
+L'objection « vous n'avez pas encore de références » est traitée frontalement
+dans la section Questions plutôt que contournée.
+
+## ⚠️ À relire avant de communiquer sur le site
+
+Les **tarifs** (490 €/49 € et 990 €/79 €) proviennent de la page `/offres` du
+site actuel et sont donc fiables. En revanche, le **détail de ce que contient
+chaque offre** (`src/data/offers.ts`) est une proposition rédigée à partir du
+positionnement : chaque ligne est à confirmer ou corriger. En particulier ces
+affirmations, qui engagent :
+
+- « données hébergées en Europe, sauvegardées chaque jour » ;
+- « fonctionne sans réseau et se synchronise au retour de la connexion » ;
+- « plusieurs utilisateurs, avec des droits différents selon les rôles » ;
+- les délais annoncés (2 semaines / 3 à 4 semaines) et la garantie associée
+  « le délai est tenu, ou l'installation n'est pas facturée ».
+
+Restent aussi à compléter :
+
 - les informations légales marquées « À compléter » dans `src/config.ts`
-  (forme juridique, SIRET, adresse, directeur de la publication).
+  (forme juridique, SIRET, adresse, directeur de la publication) ;
+- les logos des outils connectés, aujourd'hui de simples libellés (`static.ts`).

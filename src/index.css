@@ -29,7 +29,10 @@
   --radius-token: 0.75rem; /* 12px */
 
   /* Le handoff fixe une seule rupture : « sous 900px, tout passe en une
-     colonne ». On l'expose comme variante Tailwind `wide:`. */
+     colonne ». On l'expose comme variante Tailwind `wide:`.
+     ⚠️ Cette variante est générée AVANT les `sm:`/`md:`/`lg:` par défaut :
+     mélanger `sm:` et `wide:` sur une même propriété laisse `sm:` gagner.
+     N'utiliser que `wide:` dans ce projet. */
   --breakpoint-wide: 900px;
 }
 

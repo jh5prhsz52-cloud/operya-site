@@ -2,7 +2,8 @@ import { Wordmark } from './Wordmark'
 
 const NAV = [
   { href: '#methode', label: 'La méthode' },
-  { href: '#cas', label: 'Cas clients' },
+  { href: '#offres', label: 'Offres' },
+  { href: '#garanties', label: 'Garanties' },
   { href: '#questions', label: 'Questions' },
 ]
 
@@ -14,8 +15,9 @@ export function Header() {
           <Wordmark size={52} textSize={27} accent />
         </a>
 
-        {/* Pastille d'état : décorative, masquée sous 900px faute de place. */}
-        <p className="hidden flex-1 items-center gap-[9px] pl-[18px] font-mono text-[11px] text-muted-foreground wide:flex">
+        {/* Pastille d'état : décorative. Elle ne réapparaît qu'au-delà de
+            1180px, sinon elle comprime les liens de navigation. */}
+        <p className="hidden flex-1 items-center gap-[9px] pl-[18px] font-mono text-[11px] text-muted-foreground min-[1180px]:flex">
           <span className="size-[7px] shrink-0 rounded-full bg-primary" aria-hidden="true" />
           flux surveillés 24/7
         </p>

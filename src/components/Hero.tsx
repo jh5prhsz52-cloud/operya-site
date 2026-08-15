@@ -52,11 +52,39 @@ export function Hero({ topic, onSelect }: Props) {
           })}
         </div>
 
+        <div className="mt-9 flex flex-wrap items-center gap-4">
+          <a
+            href="#offres"
+            className="gradient-bg glow rounded-token min-h-[44px] px-[30px] py-[15px] text-[15px] font-medium text-background transition-opacity hover:opacity-90"
+          >
+            Voir les offres et les prix
+          </a>
+          <a
+            href="#contact"
+            className="text-[15px] text-muted-foreground underline-offset-4 transition-colors hover:text-foreground hover:underline"
+          >
+            Ou décrire votre situation
+          </a>
+        </div>
+
+        {/* Réassurance immédiate : les trois objections d'achat traitées avant
+            même que le visiteur ait scrollé. */}
+        <ul className="mt-7 flex list-none flex-wrap gap-x-6 gap-y-2 p-0 font-mono text-[11px] text-muted-foreground">
+          {['diagnostic gratuit de 15 min', 'prix annoncé avant de commencer', 'sans engagement de durée'].map(
+            (item) => (
+              <li key={item} className="flex items-center gap-[7px]">
+                <span className="size-[5px] shrink-0 rounded-full bg-primary" aria-hidden="true" />
+                {item}
+              </li>
+            ),
+          )}
+        </ul>
+
         {/* Le changement de sujet réécrit la moitié de la page : on l'annonce
             aux lecteurs d'écran, qui ne verraient rien bouger autrement. */}
         <p aria-live="polite" className="sr-only">
-          Sujet sélectionné : {TOPICS[topic].label}. Le flux, les chiffres et le formulaire
-          ci-dessous ont été mis à jour.
+          Sujet sélectionné : {TOPICS[topic].label}. Le flux et le formulaire ci-dessous ont
+          été mis à jour.
         </p>
       </div>
     </section>

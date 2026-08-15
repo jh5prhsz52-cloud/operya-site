@@ -4,7 +4,8 @@ import { Header } from './components/Header'
 import { Hero } from './components/Hero'
 import { BeforeAfter } from './components/BeforeAfter'
 import { Pipeline } from './components/Pipeline'
-import { Proof } from './components/Proof'
+import { Offers } from './components/Offers'
+import { Guarantees } from './components/Guarantees'
 import { Scope } from './components/Scope'
 import { Process } from './components/Process'
 import { Objections } from './components/Objections'
@@ -43,7 +44,8 @@ export default function App() {
         <Hero topic={topicKey} onSelect={setTopicKey} />
         <BeforeAfter topic={topic} />
         <Pipeline topic={topic} topicKey={topicKey} />
-        <Proof topic={topic} />
+        <Offers />
+        <Guarantees />
         <Scope />
         <Process />
         <Objections />

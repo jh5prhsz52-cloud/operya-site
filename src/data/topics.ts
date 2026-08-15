@@ -1,8 +1,9 @@
 /**
- * Contenu des 4 sujets du sélecteur — repris du handoff de refonte.
+ * Contenu des 4 sujets du sélecteur.
  *
- * ⚠️ Les chiffres, citations et profils clients sont des EXEMPLES de
- * démonstration. Ne pas laisser en ligne sans les vrais chiffres validés.
+ * Aucun chiffre ni témoignage ici : Operya démarre et n'a pas encore de
+ * référence publiable. La réassurance passe par les garanties (`static.ts`)
+ * et par la transparence du flux, pas par de la preuve sociale inventée.
  */
 
 export type TopicKey = 'relances' | 'devis' | 'saisie' | 'reporting'
@@ -19,12 +20,6 @@ export type Topic = {
   fluxTitre: string
   delai: string
   steps: [Step, Step, Step]
-  stat1: string
-  stat1Label: string
-  stat2: string
-  stat2Label: string
-  citation: string
-  auteur: string
   ctaTitre: string
 }
 
@@ -55,13 +50,6 @@ export const TOPICS: Record<TopicKey, Topic> = {
           'Signé, refusé ou sans réponse : le dossier se range tout seul dans la bonne colonne.',
       },
     ],
-    stat1: '0',
-    stat1Label: 'relance oubliée depuis huit mois chez un cabinet de conseil',
-    stat2: '+18 %',
-    stat2Label: 'de devis signés à volume d’envoi identique',
-    citation:
-      '« On a arrêté de se demander qui relance quoi. C’est la seule chose qui a changé, et elle a tout changé. »',
-    auteur: 'Directrice associée, cabinet de conseil (6 personnes)',
     ctaTitre: 'Parlons de vos relances.',
   },
 
@@ -87,13 +75,6 @@ export const TOPICS: Record<TopicKey, Topic> = {
         detail: 'Signature en ligne, archivage, facture préparée. Rien à recopier ailleurs.',
       },
     ],
-    stat1: '×3',
-    stat1Label: 'de devis traités par semaine, à effectif constant',
-    stat2: '24 h',
-    stat2Label: 'de délai moyen entre la demande et l’envoi, contre trois jours',
-    citation:
-      '« Avant, un devis c’était une demi-heure et de l’énervement. Aujourd’hui c’est deux minutes de relecture. »',
-    auteur: 'Fondateur, agence événementielle',
     ctaTitre: 'Parlons de vos devis.',
   },
 
@@ -108,8 +89,7 @@ export const TOPICS: Record<TopicKey, Topic> = {
     steps: [
       {
         titre: 'Point d’entrée unique',
-        detail:
-          'On choisit ensemble l’outil qui fait référence pour chaque type d’information.',
+        detail: 'On choisit ensemble l’outil qui fait référence pour chaque type d’information.',
       },
       {
         titre: 'Synchronisation',
@@ -120,13 +100,6 @@ export const TOPICS: Record<TopicKey, Topic> = {
         detail: 'Les incohérences remontent dans une liste courte au lieu de dormir dans un fichier.',
       },
     ],
-    stat1: '−9 h',
-    stat1Label: 'de saisie par semaine sur une équipe de six personnes',
-    stat2: '1',
-    stat2Label: 'seule source de vérité, au lieu de quatre fichiers concurrents',
-    citation:
-      '« Le jour où on a arrêté de recopier, on a récupéré une journée par semaine. Sans embaucher. »',
-    auteur: 'Responsable administratif, bureau d’études',
     ctaTitre: 'Parlons de votre saisie.',
   },
 
@@ -141,8 +114,7 @@ export const TOPICS: Record<TopicKey, Topic> = {
     steps: [
       {
         titre: 'Sources branchées',
-        detail:
-          'Facturation, CRM, planning : on va chercher les données là où elles vivent déjà.',
+        detail: 'Facturation, CRM, planning : on va chercher les données là où elles vivent déjà.',
       },
       {
         titre: 'Tableau unique',
@@ -153,13 +125,6 @@ export const TOPICS: Record<TopicKey, Topic> = {
         detail: 'Un récapitulatif arrive chaque lundi matin, prêt à être lu en réunion.',
       },
     ],
-    stat1: '1 min',
-    stat1Label: 'pour savoir où en est le mois, contre une demi-journée d’exports',
-    stat2: '0',
-    stat2Label: 'export manuel avant le point mensuel',
-    citation:
-      '« Je ne prépare plus mes réunions. J’ouvre le tableau, il est déjà juste. »',
-    auteur: 'Gérant, société de maintenance',
     ctaTitre: 'Parlons de votre pilotage.',
   },
 }
